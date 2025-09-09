@@ -1,0 +1,12 @@
+{
+    "fetchhost_db_version": "0.1.0",
+    "_comment": "db is updated and maintained at: https://github.com/aaronater10/fetchhost-db",
+    "fetchhost_cmds": {
+        "help": {},
+        "network-local-ip": {},
+        "network-local-routes": {},
+        "system-cpu-info": {},
+        "system-disk-usage": {},
+        "system-info": {}
+    }
+}
