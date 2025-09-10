@@ -12,7 +12,7 @@
         },
         "system_cpu_model": {
             "cmd": "lscpu | grep -i \"Model name:\"| cut -f 2 -d \":\" | tr -s [:space:] | sed \"s/ //\"",
-            "header": "System: CPU Information"
+            "header": "System: CPU Model Information"
         },
         "system_disk_usage": {
             "cmd": "df -h | grep -iv \"tmpfs\"",
@@ -20,7 +20,7 @@
         },
         "system_model_info": {
             "cmd": "dmidecode -t system | grep -i -A4 \"system info\" | grep -iv \"system info\" | tr -d \"\t\"",
-            "header": "System: CPU Information"
+            "header": "System: Model Information"
         }
     }
 }
