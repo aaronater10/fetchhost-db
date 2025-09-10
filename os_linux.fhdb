@@ -2,17 +2,25 @@
     "linux_db_version": "0.1.0",
     "_comment": "db is updated and maintained at: https://github.com/aaronater10/fetchhost-db",
     "linux_cmds": {
-        "command_name1": {
-            "cmd": "command",
-            "header": ""
+        "network_local_ip": {
+            "cmd": "ip address | grep -Eiv \"loopback|bond0|inet6|link/ether|valid_lft|host lo|link/none|docker0|tun.*\" | grep -Ei \"inet\" | cut -f 6 -d ' ' | cut -f 1 -d \"/\"",
+            "header": "Network: Local IP(s)"
         },
-        "command_name2": {
-            "cmd": "command",
-            "header": ""
+        "network_local_routes": {
+            "cmd": "ip route | grep -Eiv \"tun.*\"",
+            "header": "Network: Local Routes"
         },
-        "command_name3": {
-            "cmd": "command",
-            "header": ""
+        "system_cpu_model": {
+            "cmd": "lscpu | grep -i \"Model name:\"| cut -f 2 -d \":\" | tr -s [:space:] | sed \"s/ //\"",
+            "header": "System: CPU Information"
+        },
+        "system_disk_usage": {
+            "cmd": "df -h | grep -iv \"tmpfs\"",
+            "header": "System: Disk Usage Overall"
+        },
+        "system_model_info": {
+            "cmd": "dmidecode -t system | grep -i -A4 \"system info\" | grep -iv \"system info\" | tr -d \"\t\"",
+            "header": "System: CPU Information"
         }
     }
 }
